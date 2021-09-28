@@ -1,0 +1,27 @@
+﻿@page "/counter"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Counter</PageTitle>
+<HeadContent>
+    <link rel="canonical" href="@(NavigationManager.BaseUri)counter" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description"
+        content="Swimburger.net is a blog about .NET, Web, Azure, Umbraco, and whatever comes across Swimburger&#39;s plate. Swimburger.net is run by Niels Swimberghe." />
+    <meta name="author" content="Niels Swimberghe" />
+    <SmoMetaTags />
+</HeadContent>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
